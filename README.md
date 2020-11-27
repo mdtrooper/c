@@ -11,6 +11,6 @@ Prerequisites:
 * gulp (`npm install -g gulp`)
 
 ```
-npm install && bower install
-gulp
+npm install && npx bower install
+npm start
 ```
