@@ -7,6 +7,8 @@ do
     then
         echo "ERROR: SOMETHING IS WRONG WITH $package"
     else
+        cp package.json /tmp/temp.package.json
         echo "$package:$version"
+        cat /tmp/temp.package.json | jq ".devDependencies.\"$package\" = \"$version\"" -r > package.json
     fi
 done
