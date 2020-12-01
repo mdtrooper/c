@@ -8,7 +8,6 @@ var minifyhtml = require('gulp-minify-html');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var streamify = require('gulp-streamify');
-var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var jade = require('gulp-jade');
 var sourcemaps = require('gulp-sourcemaps');
@@ -104,7 +103,6 @@ gulp.task('copylibjs', ['clean'], function () {
   var paths = getPaths();
 
   return gulp.src(paths.libjs)
-    .pipe(gulpif(!watching, uglify({outSourceMaps: false})))
     .pipe(concat('lib.js'))
     .pipe(gulp.dest(paths.dist + 'js'))
     .on('error', gutil.log);
@@ -128,7 +126,6 @@ gulp.task('compilejs', ['jscs', 'jshint', 'clean'], function () {
     return bundler
       .bundle()
       .pipe(source('js/main.min.js'))
-      .pipe(gulpif(!watching, streamify(uglify({outSourceMaps: false}))))
       .pipe(gulp.dest(paths.dist))
       .on('error', gutil.log);
   };

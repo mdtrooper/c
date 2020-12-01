@@ -33,7 +33,6 @@
     "gulp-sourcemaps": "^1.5.1",
     "gulp-streamify": "1.0.2",
     "gulp-tag-version": "~1.2.1",
-    "gulp-uglify": "3.0.2",
     "gulp-util": "3.0.8",
     "gulp-watch": "5.0.1",
     "jscs": "3.0.7",
@@ -44,7 +43,7 @@
     "watchify": "3.11.1"
   },
   "scripts": {
-    "post-install": "node ./node_modules/bower/bin/bower install",
+    "post-install": "npx bower install",
     "start": "node ./node_modules/gulp/bin/gulp.js",
     "build": "node ./node_modules/gulp/bin/gulp.js build",
     "test": "gulp build"

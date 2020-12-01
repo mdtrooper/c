@@ -9,6 +9,6 @@ Prerequisites:
 * npm 10 (please see [NVM](https://github.com/nvm-sh/nvm))
 
 ```
-npm install && npx bower install
+npm install && npm run post-install
 npm start
 ```
